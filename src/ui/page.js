@@ -1,17 +1,18 @@
 import * as h from 'react-hyperscript-helpers'
+import {observer} from "mobx-react"
 
 import {Display} from './display.js'
 import {ControlPanel} from './controlpanel.js'
 
-const Page = ({ setHighLight, highlight }) =>
+const Page = observer(({ setHighLight, highlight }) =>
 {
     return h.div(
         "#page",
         [
-            ControlPanel({setHighLight}),
-            Display({highlight})
+            h.h(ControlPanel, {setHighLight}),
+            h.h(Display,{highlight})
         ]
     )
-}
+})
 
 export { Page }

@@ -1,9 +1,9 @@
-//import React from 'react'
+import {observable} from "mobx"
 
-import {observable} from "mobx-react"
-
-class State {
+class StateClass {
     @observable highlight = false
 }
 
-export { State }
+const state = new StateClass()
+
+export { state }

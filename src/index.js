@@ -1,15 +1,15 @@
-//import * as h from 'react-hyperscript-helpers'
+import * as h from 'react-hyperscript-helpers'
 import ReactDOM from 'react-dom'
 import {Page} from './ui/page.js'
 import './ui/index.css'
 
-import {State} from './state.js'
+import {state} from './state.js'
 
 ReactDOM.render(
-        Page(
+        h.h(Page,
             {
-                setHighLight: (highlight) => { console.log("hl == " + highlight); State.highlight = highlight },
-                highlight: State.highlight
+                setHighLight: (highlight) => { console.log("hl == " + highlight); state.highlight = highlight },
+                highlight: state.highlight
             }
         )
     ,
