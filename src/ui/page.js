@@ -3,13 +3,13 @@ import * as h from 'react-hyperscript-helpers'
 import {Display} from './display.js'
 import {ControlPanel} from './controlpanel.js'
 
-const Page = () =>
+const Page = ({ setHighLight, highlight }) =>
 {
     return h.div(
         "#page",
         [
-            ControlPanel(),
-            Display()
+            ControlPanel({setHighLight}),
+            Display({highlight})
         ]
     )
 }
