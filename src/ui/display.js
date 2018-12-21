@@ -1,10 +1,10 @@
 import * as h from 'react-hyperscript-helpers'
 import {observer} from "mobx-react"
 
-const Display = observer( ({highlight}) =>
+const Display = observer( ({state}) =>
 {
     let selector = ".demoBlock"
-    selector += (highlight ? ".highlight" : "")
+    selector += (state.highlight ? ".highlight" : "")
     return h.div(selector, "Display")
 })
 

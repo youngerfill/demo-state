@@ -8,8 +8,8 @@ import {state} from './state.js'
 ReactDOM.render(
         h.h(Page,
             {
-                setHighLight: (highlight) => { console.log("hl == " + highlight); state.highlight = highlight },
-                highlight: state.highlight
+                setHighLight: (highlight) => { state.highlight = highlight },
+                state
             }
         )
     ,
