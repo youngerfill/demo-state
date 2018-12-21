@@ -1,6 +1,6 @@
 import * as h from 'react-hyperscript-helpers'
 
-const ControlPanel = ({setHighLight}) =>
+const CheckboxPanel = ({setHighLight}) =>
 {
     return h.div(
         ".demoBlock",
@@ -22,4 +22,4 @@ const ControlPanel = ({setHighLight}) =>
     )
 }
 
-export  { ControlPanel }
+export  { CheckboxPanel }
