@@ -7,14 +7,19 @@ import './ui/index.css'
 import {state} from './state.js'
 
 ReactDOM.render(
-//        h.h(BrowserRouter,
+    h.h(BrowserRouter,
+        {
+            basename: process.env.PUBLIC_URL
+        },
+        [
             h.h(Page,
                 {
                     setHighLight: (highlight) => { state.highlight = highlight },
                     state
                 }
             )
-//        )
+        ]
+    )
     ,
     document.getElementById('root')
 )

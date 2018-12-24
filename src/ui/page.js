@@ -1,3 +1,4 @@
+import { Switch, Route } from 'react-router-dom'
 import * as h from 'react-hyperscript-helpers'
 import {observer} from "mobx-react"
 
@@ -6,11 +7,25 @@ import {CheckboxPanel} from './checkboxpanel.js'
 
 const Page = observer(({ setHighLight, state }) =>
 {
-    return h.div(
-        "#page",
+    return h.h(
+        Switch,
         [
-            h.h(CheckboxPanel, {setHighLight}),
-            h.h(DisplayPanel,{state})
+            h.h(
+                Route,
+                {
+                    exact: true,
+                    path: '/',
+                    render: () => {
+                        return h.div(
+                            "#page",
+                            [
+                                h.h(CheckboxPanel, {setHighLight}),
+                                h.h(DisplayPanel, {state})
+                            ]
+                        )
+                    }
+                }
+            )
         ]
     )
 })
